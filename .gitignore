@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+.pytest_cache/
+
+# Virtual environments
+.venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE
+.vscode/
+
+# OS
+.DS_Store
+
+# Secrets / environment
+.env
+.env.*
+
+# Raw/private data
+data/raw/*
+data/*.csv
+!data/raw/.gitkeep
+
+# Generated model artifacts
+outputs/models/*
+!outputs/models/.gitkeep
+
+# Temporary files
+*.tmp
+*.log
