@@ -15,10 +15,6 @@ env/
 # OS
 .DS_Store
 
-# Secrets / environment
-.env
-.env.*
-
 # Raw/private data
 data/raw/*
 data/*.csv
