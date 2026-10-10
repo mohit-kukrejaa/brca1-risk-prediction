@@ -1,0 +1,24 @@
+## Congigurations to make it easy to run different experiments and fin-tune models without changing the core logic or any scripts
+
+[paths]
+    raw_data = "data/raw/dataset.csv"
+    processed_data = "data/processed/brca1_features.csv"
+    data_figures = "outputs/figures/data"
+    model_figures = "outputs/figures/model"
+    tables = "outputs/tables"
+
+[data]
+    target = "label"
+    positive_labels = ["Pathogenic", "Likely pathogenic"]
+    negative_labels = ["Benign", "Likely benign"]
+
+[features]
+    metadata = ["variation_id", "protein_change", "ref_aa", "alt_aa", "clinical_significance", "domain"]
+
+    base = ["protein_position", "distance_to_domain", "plddt", "plddt_at_pos", "plddt_window11", 
+            "hydro_delta", "charge_delta", "volume_delta", "is_stop_gained", "is_frameshift", "is_splice_region", 
+            "domain_BRCT1", "domain_BRCT2", "domain_OTHER", "domain_RING"]
+
+    engineered = ["plddt_delta", "plddt_neighbor_delta", "blosum62_score", "grantham_distance", 
+                  "hydro_signed_delta", "volume_signed_delta", "in_functional_domain", 
+                  "grantham_plddt", "blosum_plddt", "blosum_unfavorable_plddt", "grantham_domain"]
