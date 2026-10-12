@@ -9,9 +9,7 @@ An end-to-end machine learning pipeline designed to predict BRCA1 mutation risk 
 <div class="section-start">
 
 ## 1. Problem Statement
-
 BRCA1 variants can have different levels of clinical significance, ranging from benign changes to variants associated with increased disease risk. The goal of this project was to evaluate whether structural and sequence-derived features can be used to distinguish pathogenic BRCA1 variants from benign variants.
-
 </div>
 
 The problem was formulated as a binary classification task:
@@ -23,13 +21,12 @@ Variants classified as Variant of Uncertain Significance (VUS), Conflicting Inte
 
 The main question answered through this project is whether information such as protein position, BRCA1 functional domain, structural confidence, amino-acid substitution properties, and variant consequence can provide enough information to predict pathogenicity.
 
-The model is not intended to replace clinical variant interpretation or expert review. It is just for research purpose.
+The model isn't intended to replace clinical interpretation or expert review. It is just for research purpose.
 
 ## 2. Data Sources and Preprocessing
 <div class="section-start">
 
 ### 2.1 Dataset Overview
-
 The analysis used the BRCA1 variant dataset provided. No external datasets were added to the main modeling pipeline.
 
 </div>
@@ -82,9 +79,7 @@ The resulting dataset had a moderate class imbalance, with approximately **58.7%
 ### 2.2 Label Preparation
 
 Clinical significance was converted into a binary target:
-
 </div>
-
 <div class="data-table keep-together">
 
 | Clinical Significance | Target |
@@ -138,7 +133,6 @@ There was no overlap in protein positions between the training, validation, and 
 Exploratory analysis was performed to understand how pathogenic and benign variants were distributed across BRCA1 and to identify patterns in the structural and sequence-derived features before model training.
 
 </div>
-
 <div class="section-start">
 
 ### 3.1 Variant Position by Class
@@ -267,14 +261,13 @@ Grid search was used for Logistic Regression, while randomized search was used f
 
 </div>
 
-Each model was evaluated using the three feature configurations: (1) Base, (2) Base plus Engineered, and (3) Model Selected. The best feature configuration for each model was selected using cross-validation Average Precision.
+Each model was evaluated using 3 feature configurations: (1) Base, (2) Base plus Engineered, and (3) Model Selected. The best feature configuration for each model was selected using cross-validation Average Precision.
 
 <div class="section-start">
 
 ### 5.2 Validation Model Comparison
 
 After hyperparameter tuning, the best version of each model was evaluated on the fixed validation set.
-
 </div>
 
 <div class="data-table keep-together">
@@ -293,7 +286,7 @@ Logistic Regression was selected as the final model because it achieved the stro
 
 ## 6. Class Imbalance and Threshold Selection
 
-The dataset had a moderate class imbalance, with **58.7% benign** and **41.3% pathogenic** variants. Because the imbalance was not extreme, SMOTE was not used. Instead, class weighting was evaluated as part of model tuning.
+The dataset had a moderate class imbalance, with **58.7% benign** and **41.3% pathogenic** variants. As the imbalance was not extreme, SMOTE was not used. Instead, class weighting was evaluated as part of model tuning.
 
 </div>
 
@@ -330,7 +323,7 @@ The final Logistic Regression model was evaluated on the held-out test set using
 | Specificity | 0.870 |
 | F1 Score | 0.629 |
 | Balanced Accuracy | 0.713 |
-| Brier Score | 0.182 |
+| Brier Score | 0.183 |
 
 </div>
 
@@ -432,7 +425,7 @@ A few individual predictions were also reviewed. The pathogenic variant **p.F152
 
 ## 10. Limitations and Conclusion
 
-The dataset was relatively small and limited to BRCA1, so the model may not generalize to other genes or broader clinical populations. The model also relied only on the supplied structural, positional, biochemical, and consequence-derived features. Other important sources of evidence, such as population frequency, functional studies, family history, and external clinical databases, were not included.
+The dataset was relatively small and limited to BRCA1, so the model may not generalize to other genes or broader clinical populations. The model also relied only on the supplied structural, positional, biochemical, and consequence-derived features. Other important sources of evidence, such as population frequency, functional studies, family history, and external clinical databases, were not included. The dataset also contained some inconsistencies between protein-change notation, reference residues, and consequence indicators. These annotations were retained as provided because their original provenance was not available for independent correction.
 
 </div>
 

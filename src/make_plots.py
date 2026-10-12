@@ -264,4 +264,4 @@ def plot_feature_importance(importance_df, figures_path):
     for i, coef in enumerate(plot_df["coefficient"]):
         ax.text(plot_df["importance"].iloc[i] + 0.01, i, f"{coef:.3f}", va="center")
 
-    save_figure(fig, figures_path, "feature_importance_bar.png")
+    save_figure(fig, figures_path, "feature_importance.png")

@@ -171,7 +171,7 @@ Held-out test performance:
 | Specificity | 0.870 |
 | F1 Score | 0.629 |
 | Balanced Accuracy | 0.713 |
-| Brier Score | 0.182 |
+| Brier Score | 0.183 |
 
 The final classification threshold was selected on the validation set and fixed at 0.52 before test evaluation.
 
