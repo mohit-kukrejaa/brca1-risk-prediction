@@ -1,0 +1,2 @@
+average_precision,roc_auc,precision,recall,specificity,f1,balanced_accuracy,brier_score,true_negative,false_positive,false_negative,true_positive,model,experiment,threshold
+0.6934269864859183,0.7876712328767121,0.7246376811594203,0.5555555555555556,0.8698630136986302,0.6289308176100629,0.7127092846270928,0.18277029661900285,127,19,40,50,logistic_regression,base,0.52

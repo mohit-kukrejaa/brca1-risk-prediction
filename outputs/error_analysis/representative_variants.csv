@@ -1,0 +1,5 @@
+variation_id,protein_change,protein_position,clinical_significance,domain,label,prediction,probability,error_type,is_stop_gained,is_frameshift,is_splice_region,plddt_at_pos,plddt_window11,hydro_delta,charge_delta,volume_delta,grantham_distance,grantham_domain,blosum62_score
+100222,p.F1523N,1523,Pathogenic,OTHER,1,1,0.9873113670427314,TP,1,1,0,54.90049006474199,52.15937488678696,6.3,1,75.80000000000001,158,0,-3
+100007,p.E1033T,1033,Benign,OTHER,0,1,0.9808996739592484,FP,1,0,1,55.98014521729662,55.20919658166502,2.8,1,22.30000000000001,66,0,-1
+101292,p.E775D,775,Pathogenic,OTHER,1,0,0.1307465986300529,FN,0,0,0,39.87351901839384,49.46231887491091,0.0,0,27.30000000000001,45,0,2
+100227,p.D962N,962,Likely benign,OTHER,0,0,0.1138860128467702,TN,0,0,0,50.26943683165693,48.35283419067553,0.0,0,3.0,23,0,1
