@@ -1,11 +1,13 @@
-## Congigurations to make it easy to run different experiments and fin-tune models without changing the core logic or any scripts
+## Configurations to make it easy to run different experiments and fin-tune models without changing the core logic or any scripts
 
 [paths]
     raw_data = "data/raw/dataset.csv"
     processed_data = "data/processed/brca1_features.csv"
+    split_data = "data/processed/split_data.csv"
     data_figures = "outputs/figures/data"
     model_figures = "outputs/figures/model"
     tables = "outputs/tables"
+    models = "outputs/models"
 
 [data]
     target = "label"

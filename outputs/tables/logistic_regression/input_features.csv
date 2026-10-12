@@ -1,0 +1,16 @@
+feature
+protein_position
+distance_to_domain
+plddt
+plddt_at_pos
+plddt_window11
+hydro_delta
+charge_delta
+volume_delta
+is_stop_gained
+is_frameshift
+is_splice_region
+domain_BRCT1
+domain_BRCT2
+domain_OTHER
+domain_RING

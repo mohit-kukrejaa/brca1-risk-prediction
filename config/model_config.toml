@@ -1,0 +1,61 @@
+[split]
+    train_size      = 0.70
+    validation_size = 0.15
+    test_size       = 0.15
+    group_column    = "protein_position"
+    random_state    = 42
+
+[training]
+    cv_folds = 5
+    refit_metric    = "average_precision"
+    metrics         = ["average_precision", "roc_auc", "balanced_accuracy"]
+    experiments     = ["base", "base_plus_engineered", "model_selected"]
+
+[evaluation]
+    metrics         = ["precision", "recall", "specificity", "f1", "balanced_accuracy", "average_precision", "roc_auc", "brier_score"]
+
+[models.logistic_regression]
+    enabled         = true
+    search          = "grid"
+    solver          = "liblinear"
+    C               = [0.01, 0.1, 1.0, 10.0, 100.0]
+    l1_ratio        = [0.0,1.0]
+    class_weight    = ["none", "balanced"]
+    max_iter        = 3000
+
+[models.logistic_regression.selection]
+    thresholds      = ["median", "mean"]
+
+[models.random_forest]
+    enabled         = true
+    search          = "random"
+    n_iter          = 40
+    n_estimators    = [100, 200, 400, 500]
+    max_depth       = [5, 8, 10, 15, 20]
+    min_samples_leaf= [1, 3, 5]
+    max_features    = ["sqrt", "log2"]
+    class_weight    = ["none", "balanced", "balanced_subsample"]
+
+[models.random_forest.selection]
+    thresholds      = ["median", "mean"]
+
+[models.xgboost]
+    enabled         = true
+    search          = "random"
+    n_iter          = 50
+    n_estimators    = [100, 200, 300, 400]
+    max_depth       = [3, 4, 5, 8, 10]
+    learning_rate   = [0.03, 0.05, 0.1]
+    min_child_weight= [1, 3, 5]
+    subsample       = [0.8, 0.9, 1.0]
+    colsample_bytree= [0.8, 0.9, 1.0]
+    reg_lambda      = [1.0, 3.0, 5.0]
+
+[models.xgboost.selection]
+    thresholds      = ["median", "mean"]
+
+[threshold]
+    min     = 0.10
+    max     = 0.90
+    step    = 0.01
+    metric  = "balanced_accuracy"

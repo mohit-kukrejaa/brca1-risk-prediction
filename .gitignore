@@ -21,9 +21,11 @@ data/*.csv
 !data/raw/.gitkeep
 
 # Generated model artifacts
-outputs/models/*
 !outputs/models/.gitkeep
 
 # Temporary files
 *.tmp
 *.log
+
+#Experiments and test notebooks
+notebooks/test*.ipynb

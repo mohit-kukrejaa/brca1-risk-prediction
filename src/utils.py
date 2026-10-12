@@ -3,8 +3,8 @@ import tomllib
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 
-def load_config():
-    config_path = PROJECT_ROOT / "config" / "config.toml"
+def load_config(filename="config.toml"):
+    config_path = PROJECT_ROOT / "config" / filename
 
     with open(config_path, "rb") as file:
         return tomllib.load(file)
